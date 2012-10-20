@@ -27,21 +27,32 @@ class MatrizInversa(Sistema3x3):
 		if self.detp==0:
 			print "no tiene inversa"
 		else:
+			print self.detp
 			for x in xrange(0,3):
 				self.filar=[]
 				for y in xrange(0,3):
 					if x==0 and y==1:
-						self.adj =(self.calcularAdjunta(x,y)*-1)/self.detp
+						a= self.calcularAdjunta(x,y)
+						b= float(a*-1)
+						self.adj =b/float(self.detp)
 					elif x==1 and y==0:
-						self.adj =(self.calcularAdjunta(x,y)*-1)/self.detp
+						a= self.calcularAdjunta(x,y)
+						b= float(a*-1)
+						self.adj =b/float(self.detp)
 					elif x==1 and y==2:
-						self.adj =(self.calcularAdjunta(x,y)*-1)/self.detp
+						a= self.calcularAdjunta(x,y)
+						b= float(a*-1)
+						self.adj =b/float(self.detp)
 					elif x==2 and y==1:
-						self.adj =(self.calcularAdjunta(x,y)*-1)/self.detp
+						a= self.calcularAdjunta(x,y)
+						b= float(a*-1)
+						self.adj =b/float(self.detp)
 					else:
-						self.adj =(self.calcularAdjunta(x,y))/self.detp
+						b= float(self.calcularAdjunta(x,y))
+						self.adj =b/self.detp
 					self.filar.append(self.adj)
 				self.matr.append(self.filar)
+			print "el resultado es:"
 			for x in self.matr:
 				print x
 	def calcularAdjunta(self,a,b):
@@ -50,13 +61,10 @@ class MatrizInversa(Sistema3x3):
 		for x in xrange(0,3):
 			filaa=[]
 			if x!=a:
-				print "x2="+str(x)
 				for y in xrange(0,3):
 					if y!= b:
 						filaa.append(self.matriz2[x][y])
 				matriza.append(filaa)
-		for x in matriza:
-			print x
 		return self.Adjunta(matriza)
 	def Adjunta(self,matriz):
 		a=matriz[0][0]*matriz[1][1]
