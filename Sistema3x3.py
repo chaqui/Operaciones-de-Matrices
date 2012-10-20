@@ -59,6 +59,7 @@ class Sistema3x3(object):
 			self.detz=self.calcularDeterminante()
 			#hallar y
 			self.z=self.detz/self.detp
+			print"la respuesta es:"
 			print "x="+str(self.x)+"\ny="+str(self.y)+"\nz="+str(self.z)
 	def pasarafila2(self):
 		self.matriz2=[]
@@ -120,5 +121,3 @@ class Sistema3x3(object):
 				c=self.matriz2[x][x-1]*c
 		r2=a+b+c
 		return r1-r2
-sistema = Sistema3x3()
-sistema.calcular()
