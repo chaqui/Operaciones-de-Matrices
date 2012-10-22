@@ -1,3 +1,4 @@
+#encoding: utf-8
 class Sistema3x3(object):
 
 	def pedirMatriz(self):

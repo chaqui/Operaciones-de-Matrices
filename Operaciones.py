@@ -1,3 +1,4 @@
+#encoding: utf-8
 class Operacion:
 	"""docstring for ClassName"""
 	def __init__(self):

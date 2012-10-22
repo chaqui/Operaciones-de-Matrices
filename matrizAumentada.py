@@ -1,3 +1,4 @@
+#encoding: utf-8
 class MatrizAumentada(object):
 	"""docstring for MatrizAumentada"""
 	def procesar(self):

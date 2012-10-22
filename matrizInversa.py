@@ -1,3 +1,4 @@
+#encoding: utf-8
 from Sistema3x3 import Sistema3x3
 class MatrizInversa(Sistema3x3):
 
