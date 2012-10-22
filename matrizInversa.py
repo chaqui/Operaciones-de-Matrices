@@ -70,5 +70,3 @@ class MatrizInversa(Sistema3x3):
 		a=matriz[0][0]*matriz[1][1]
 		b=matriz[1][0]*matriz[0][1]
 		return a-b
-inversa=MatrizInversa()
-inversa.calcularM()

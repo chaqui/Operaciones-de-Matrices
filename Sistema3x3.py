@@ -15,9 +15,9 @@ class Sistema3x3(object):
 					if y==2:
 						p="z"
 					if y==3:
-						self.columna=int(raw_input("Porfavor ingrese la variable entera :"))
+						self.columna=float(raw_input("Porfavor ingrese la variable entera :"))
 					else:
-						self.columna=int(raw_input("Porfavor ingrese "+p+str(x+1)+" :"))
+						self.columna=float(raw_input("Porfavor ingrese "+p+str(x+1)+" :"))
 					self.filas.append(self.columna)
 				self.matriz.append(self.filas)
 			for x in self.matriz:
@@ -106,7 +106,7 @@ class Sistema3x3(object):
 			d=d-1
 		for x in xrange(0,3):
 			if x==0:
-				b=self.matriz2[x][x+1]*b
+				b=self.matriz2[x][x+1] *b
 			if x==1:
 				b=self.matriz2[x][x-1]*b
 			if x==2:

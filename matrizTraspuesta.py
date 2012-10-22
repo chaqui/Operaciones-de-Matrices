@@ -1,6 +1,6 @@
 from Operaciones import Operacion
 
-class MatrizInversa(Operacion):
+class MatrizTraspuesta(Operacion):
 	def matrizinversa(self):
 		self.PedirMatriz()
 		self.matriz2=[]
@@ -14,5 +14,3 @@ class MatrizInversa(Operacion):
 		print "el resultado es el siguiente:" 
 		for x in self.matriz2:
 			print x
-matriz=MatrizInversa()
-matriz.matrizinversa()
