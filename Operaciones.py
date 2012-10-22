@@ -4,7 +4,7 @@ class Operacion:
 	def __init__(self):
 		pass
 	def pedirDimensiones(self):
-		Dimensiones=raw_input("Pofavor ingrese las dimensiones de la  matriz \n")
+		Dimensiones=raw_input("Pofavor ingrese las dimensiones de la  matriz (filas X columnas) \n")
 		self.fila=""
 		self.columna=""
 		self.bandera = True

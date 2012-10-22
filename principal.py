@@ -14,7 +14,7 @@ class Principal(object):
 
 	def menu(self):
 		print"="*42
-		print"Bienvendios programa de Algebra lineal"
+		print"Bienvenidos programa de Algebra lineal"
 		print"--------Hecho en PYTHON---------------"
 		print"1..........................Sistema 3x3"
 		print"2.......................Matriz Inversa"
@@ -44,9 +44,3 @@ class Principal(object):
 		else:
 			print"error ingrese otra funcion"
 		hs=raw_input("Presione enter para continuar")
-p=Principal()		
-
-
-
-		
-		

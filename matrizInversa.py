@@ -10,12 +10,12 @@ class MatrizInversa(Sistema3x3):
 			for x in xrange(0,3):
 				self.filas=[]
 				for y in xrange(0,3):
-					self.columna=int(raw_input("Porfavor ingrese "+str(x+1)+" "+str(y+1)+" :"))
+					self.columna=int(raw_input("Porfavor ingrese "+"fila "+str(x+1)+" y columna "+str(y+1)+" :"))
 					self.filas.append(self.columna)
 				self.matriz.append(self.filas)
 			for x in self.matriz:
 				print x
-			self.res=int(raw_input("esta bien la matriz si=1 / no=0"))
+			self.res=int(raw_input("esta correcta la matriz si=1 / no=0"))
 			if self.res==0:
 				print"vuelva a entrar los datos"
 	def calcularM(self):
