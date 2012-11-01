@@ -1,0 +1,42 @@
+#coding: utf-8
+import wx
+class ITraspuesta(wx.Frame):
+
+    def __init__(self,parent,title):
+        #Hipoteca Real
+        self.b=False
+        wx.Frame.__init__(self, parent, title="Matriz Traspuesta"+" "+title, size=(800, 400))
+        self.pos=0 
+        self.size=20
+        self.stCredito=wx.StaticText(self,label="------Matriz Traspuesta------- 	"+" "+title,pos=(5,self.pos+10),size=(200,self.size))
+        self.pos=5
+        #---------------Datos De las ecuaciones----------------s
+        self.PCEcuaciones=wx.Panel(self,pos=(0,30),size=(800,200))
+        #titulo de las ecuaciones
+        self.stEcuacion=wx.StaticText(self.PCEcuaciones,label="Ecuaciones:",pos=(5,self.pos),size=(150,self.size))
+        self.stNombreCliente=wx.StaticText(self.PCEcuaciones,label="(de la forma ax+by+cz=d)",pos=(131,self.pos),size=(250,self.size))
+        #primera ecuacion
+        self.pos=self.pos+self.size
+        self.stPEcuacion=wx.StaticText(self.PCEcuaciones,label="X1:",pos=(5,self.pos),size=(150,self.size))
+        self.txtPEcuacion=wx.TextCtrl(self.PCEcuaciones,pos=(131,self.pos),size=(30,self.size),name="txtPEcuacion",id=0)
+        #segunda ecuacion
+        self.pos=self.pos+self.size
+        self.stSEcuaciones=wx.StaticText(self.PCEcuaciones,label="Segunda Ecuacion:",pos=(2,self.pos),size=(150,self.size))
+        self.txtSEcuaciones=wx.TextCtrl(self.PCEcuaciones,pos=(131,self.pos),size=(350,self.size),name="txtSEcuaciones",id=0)
+        #tercera ecuacion
+        self.pos=self.pos+self.size
+        self.stTEcuaciones=wx.StaticText(self.PCEcuaciones,label="Tercera Ecuacion:",pos=(2,self.pos),size=(150,self.size))
+        self.txtTEcuaciones=wx.TextCtrl(self.PCEcuaciones,pos=(131,self.pos),size=(350,self.size),name="txtTEcuaciones",id=0)
+        self.pos=self.pos+self.size
+        #resultado primera ecuacion
+        self.stREcuacion1=wx.StaticText(self.PCEcuaciones,label="",pos=(131,self.pos),size=(150,self.size))
+        self.pos=self.pos+self.size
+        #resultado segunda ecuacion
+        self.stREcuacion2=wx.StaticText(self.PCEcuaciones,label="",pos=(131,self.pos),size=(150,self.size))
+        self.pos=self.pos+self.size
+        #resultado tercera ecuacion
+        self.stREcuacion3=wx.StaticText(self.PCEcuaciones,label="",pos=(131,self.pos),size=(150,self.size))
+        self.txtPEcuacion.Bind(wx.EVT_KEY_UP, self.analizarPEcuacion)
+        self.txtSEcuaciones.Bind(wx.EVT_KEY_UP, self.analizarSEcuacion)
+        self.txtTEcuaciones.Bind(wx.EVT_KEY_UP, self.analizarTEcuacion)
+        self.Centre(True)  #
