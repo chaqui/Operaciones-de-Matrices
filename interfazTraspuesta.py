@@ -58,7 +58,7 @@ class ITraspuesta(wx.Frame):
         self.txtN4=wx.TextCtrl(self.PCEcuaciones,pos=(290,self.pos),size=(50,self.size),name="txtz1",id=0)
         self.pos=self.pos+self.size
         #titulo de las ecuaciones
-        self.stEcuacionq=wx.StaticText(self.PCEcuaciones,label="Respuesta:",pos=(5,self.pos),size=(150,self.size))
+        self.stEcuacionq=wx.StaticText(self.PCEcuaciones,label="--------------------------------------------------Respuesta:--------------------------------------------------",pos=(5,self.pos),size=(800,self.size))
         self.pos=self.pos+self.size
         self.stX1=wx.StaticText(self.PCEcuaciones,label="",pos=(131,self.pos),size=(50,self.size))
         self.stY1=wx.StaticText(self.PCEcuaciones,label="",pos=(185,self.pos),size=(50,self.size))
