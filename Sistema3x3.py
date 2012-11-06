@@ -1,37 +1,10 @@
 #encoding: utf-8
 class Sistema3x3(object):
-
-	def pedirMatriz(self):
-		self.filas=[]
-		self.matriz=[]
-		self.res=0
-		while(self.res==0) :
-			for x in xrange(0,3):
-				self.filas=[]
-				for y in xrange(0,4):
-					if y==0:
-						p="x"
-					if y==1:
-						p="y"
-					if y==2:
-						p="z"
-					if y==3:
-						self.columna=float(raw_input("Porfavor ingrese la variable entera :"))
-					else:
-						self.columna=float(raw_input("Porfavor ingrese "+p+str(x+1)+" :"))
-					self.filas.append(self.columna)
-				self.matriz.append(self.filas)
-			for x in self.matriz:
-				print x
-			self.res=int(raw_input("esta bien la matriz si=1 / no=0"))
-			if self.res==0:
-				print"vuelva a entrar los datos"
-
-	def calcular(self):
+	def calcular(self,m):
 		#inicializacion de variables
 		self.matriz3=[]
 		self.fila3=[]
-		self.pedirMatriz()
+		self.matriz=m
 
 		#pasar a una matriz 3x3
 		for x in xrange(0,3):
@@ -43,7 +16,7 @@ class Sistema3x3(object):
 		self.pasarafila2()
 		self.detp=self.calcularDeterminante()
 		if self.detp==0:
-			print"la ecuacion tiene infinitas respuestas"
+			return 0
 		else:
 			#determinante en x
 			self.pasarColumna4(0)
@@ -62,6 +35,11 @@ class Sistema3x3(object):
 			self.z=self.detz/self.detp
 			print"la respuesta es:"
 			print "x="+str(self.x)+"\ny="+str(self.y)+"\nz="+str(self.z)
+			a=[]
+			a.append(self.x)
+			a.append(self.y)
+			a.append(self.z)
+			return a
 	def pasarafila2(self):
 		self.matriz2=[]
 		for x in xrange(0,3):
@@ -89,36 +67,36 @@ class Sistema3x3(object):
 			a=self.matriz2[y][y]*a
 		for x in xrange(0,3):
 			if x==2:
-				b=self.matriz2[x][0]*b
+				b=float(self.matriz2[x][0]*b)
 			else:
-				b=self.matriz2[x][x+1]*b
+				b=float(self.matriz2[x][x+1]*b)
 		for x in xrange(0,3):
 			if x==0:
-				c=c*self.matriz2[x][x+2]
+				c=float(c*self.matriz2[x][x+2])
 			else:
-				c=c*self.matriz2[x][x-1]
+				c=float(c*self.matriz2[x][x-1])
 		r1=a+b+c
 		a=1
 		b=1
 		c=1
 		d=2
 		for x in xrange(0,3):
-			a=self.matriz2[x][d]*a
+			a=float(self.matriz2[x][d]*a)
 			d=d-1
 		for x in xrange(0,3):
 			if x==0:
-				b=self.matriz2[x][x+1] *b
+				b=float(self.matriz2[x][x+1] *b)
 			if x==1:
-				b=self.matriz2[x][x-1]*b
+				b=float(self.matriz2[x][x-1]*b)
 			if x==2:
-				b=self.matriz2[x][x]*b
+				b=float(self.matriz2[x][x]*b)
 		
 		for x in xrange(0,3):
 			if x==0:
-				c=self.matriz2[x][x]*c
+				c=float(self.matriz2[x][x]*c)
 			if x==1:
-				c=self.matriz2[x][x+1]*c
+				c=float(self.matriz2[x][x+1]*c)
 			if x==2:
-				c=self.matriz2[x][x-1]*c
+				c=float(self.matriz2[x][x-1]*c)
 		r2=a+b+c
 		return r1-r2

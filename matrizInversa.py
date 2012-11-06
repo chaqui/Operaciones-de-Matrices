@@ -1,32 +1,16 @@
 #encoding: utf-8
 from Sistema3x3 import Sistema3x3
 class MatrizInversa(Sistema3x3):
-
-	def pedirMatriz(self):
-		self.filas=[]
-		self.matriz=[]
-		self.res=0
-		while(self.res==0) :
-			for x in xrange(0,3):
-				self.filas=[]
-				for y in xrange(0,3):
-					self.columna=int(raw_input("Porfavor ingrese "+"fila "+str(x+1)+" y columna "+str(y+1)+" :"))
-					self.filas.append(self.columna)
-				self.matriz.append(self.filas)
-			for x in self.matriz:
-				print x
-			self.res=int(raw_input("esta correcta la matriz si=1 / no=0"))
-			if self.res==0:
-				print"vuelva a entrar los datos"
-	def calcularM(self):
+	def calcularM(self,m):
 		self.filar=[]
 		self.matr=[]
 		print "Inversa de matriz 3x3"
-		self.pedirMatriz()
+		self.matriz=m
 		self.pasarafila2()
 		self.detp=self.calcularDeterminante()
 		if self.detp==0:
 			print "no tiene inversa"
+			return []
 		else:
 			print self.detp
 			for x in xrange(0,3):
@@ -54,8 +38,8 @@ class MatrizInversa(Sistema3x3):
 					self.filar.append(self.adj)
 				self.matr.append(self.filar)
 			print "el resultado es:"
-			for x in self.matr:
-				print x
+			print self.matr
+			return self.matr
 	def calcularAdjunta(self,a,b):
 		matriza=[]
 		filaa=[]
