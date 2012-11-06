@@ -104,7 +104,3 @@ class ISistema3(wx.Frame):
             self.stX.SetLabel(str(r[0]))
             self.stY.SetLabel(str(r[1]))
             self.stZ.SetLabel(str(r[2]))
-app = wx.App(False)
-APP_TITLE=" --Python--"
-frame = ISistema3(None,APP_TITLE)
-app.MainLoop()

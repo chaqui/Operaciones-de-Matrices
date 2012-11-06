@@ -130,7 +130,3 @@ class Iinversa(wx.Frame):
             self.stX3.SetLabel(str(self.resp[0][0]))
             self.stY3.SetLabel(str(self.resp[0][1]))
             self.stZ3.SetLabel(str(self.resp[0][2]))
-app = wx.App(False)
-APP_TITLE=" --Python--"
-frame = Iinversa(None,APP_TITLE)
-app.MainLoop()

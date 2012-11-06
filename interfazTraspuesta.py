@@ -187,7 +187,3 @@ class ITraspuesta(wx.Frame):
                 return True
         except Exception, e:
             cad1=[]
-app = wx.App(False)
-APP_TITLE=" --Python--"
-frame = ITraspuesta(None,APP_TITLE)
-app.MainLoop()

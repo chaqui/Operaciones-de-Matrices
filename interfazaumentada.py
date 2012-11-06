@@ -274,7 +274,3 @@ class IAumentada(wx.Frame):
         print "la Matriz Aumentada es la siguiente:"
         print matrizr
         return matrizr
-app = wx.App(False)
-APP_TITLE=" --Python--"
-frame = IAumentada(None,APP_TITLE)
-app.MainLoop()

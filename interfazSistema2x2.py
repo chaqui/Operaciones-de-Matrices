@@ -72,7 +72,3 @@ class ISistema2(wx.Frame):
             print r
             self.stX.SetLabel(str(r[0]))
             self.stY.SetLabel(str(r[1]))
-app = wx.App(False)
-APP_TITLE=" --Python--"
-frame = ISistema2(None,APP_TITLE)
-app.MainLoop()
